@@ -1,0 +1,38 @@
+<div class="page-title">
+    <h2>Fruit Baskets</h2>
+</div>
+<div class="card">
+    <mat-card class="appleClr">
+      <mat-card-title>Apple</mat-card-title>
+        <p class="count">{{appContainer}}</p>
+      <mat-card-actions>
+         <button mat-mini-fab (click)="appContainer>0 && incBasket('Apple')">+</button>
+          <button mat-mini-fab (click)="appContainer<10 && decBasket('Apple')">-</button>
+      </mat-card-actions>
+    </mat-card>
+   <mat-card class="orangeClr">
+     <mat-card-title>Orange</mat-card-title>
+       <p class="count">{{oraContainer}}</p>
+      <mat-card-actions>
+         <button mat-mini-fab (click)="oraContainer>0 && incBasket('Orange')">+</button>
+          <button mat-mini-fab (click)="appContainer<10 && decBasket('Orange')">-</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="grapesClr">
+     <mat-card-title>Grapes</mat-card-title>
+       <p class="count">{{grapContainer}}</p>
+      <mat-card-actions>
+         <button mat-mini-fab (click)="grapContainer>0 && incBasket('Grapes')">+</button>
+          <button mat-mini-fab (click)="appContainer<10 && decBasket('Grapes')">-</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <div class="card-result">
+  <mat-card>
+      <div *ngFor="let list of finalBasket " class="">
+          <span [ngClass]="list === 'Apple' ? 'appleClr' : list === 'Orange' ? 'orangeClr' : 'grapesClr'"></span>
+      </div>
+  </mat-card>
+    </div>
+  
